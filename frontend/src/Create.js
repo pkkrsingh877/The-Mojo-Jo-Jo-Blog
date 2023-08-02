@@ -14,7 +14,7 @@ const Create = () => {
         const blog = { title, body, author };
         try {
             setIsPending(true);
-            const response = await fetch('http://localhost:8000/create',{
+            const response = await fetch('https://the-mojo-jo-jo-blog.prabhatkumar123.repl.co/create',{
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(blog)

@@ -3,12 +3,12 @@ import useFetch from './useFetch';
 
 const BlogDetails = () => {
     const { id } = useParams();
-    const { data: blog, isPending, error } = useFetch(`http://localhost:8000/blogs/${id}`);
+    const { data: blog, isPending, error } = useFetch(`https://the-mojo-jo-jo-blog.prabhatkumar123.repl.co/blogs/${id}`);
     const navigate = useNavigate();
 
     const handleDelete = async () => {
         try {
-            const response = await fetch(`http://localhost:8000/blogs/${id}`,{
+            const response = await fetch(`https://the-mojo-jo-jo-blog.prabhatkumar123.repl.co/blogs/${id}`,{
                 method: 'DELETE'
             });
             if(!response.ok){
