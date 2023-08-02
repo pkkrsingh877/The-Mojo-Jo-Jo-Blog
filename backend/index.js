@@ -4,6 +4,12 @@ const mongoose = require('mongoose');
 const Blog = require('./models/blogs');
 require('dotenv').config();
 
+// Set the Access-Control-Allow-Origin header to allow requests from all domains.
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://the-mojo-jo-jo-blog.netlify.app');
+    next();
+});
+
 //setting up data connection
 
 const databaseSetup = async () => {
