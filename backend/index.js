@@ -4,9 +4,14 @@ const mongoose = require('mongoose');
 const Blog = require('./models/blogs');
 require('dotenv').config();
 
-// Set the Access-Control-Allow-Origin header to allow requests from all domains.
+// Middleware to set the Access-Control-Allow-Origin header for a specific domain.
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', 'https://the-mojo-jo-jo-blog.netlify.app');
+  
+    // Set additional CORS headers if needed (e.g., for handling different HTTP methods or headers).
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  
     next();
 });
 
